@@ -1,0 +1,416 @@
+<% var BASE_URL = process.env.BASE_URL %>
+<!-- Main Sidebar Container -->
+      <aside  class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="<%=BASE_URL%>/admin/dashboard" class="brand-link">
+          <span class="brand-text font-weight-light">Home Service</span>
+        </a>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+         
+          <!-- SidebarSearch Form -->
+          <div class="form-inline mt-3 mb-3">
+            <div class="input-group" data-widget="sidebar-search">
+              <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                  <i class="fas fa-search fa-fw"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/dashboard" class="<%= active === 'dashboard' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+
+              <!-- <li class="nav-item">
+                <a href="<%=BASE_URL%>/admin/sellers" class="<%= active === 'seller' ? 'nav-link active' : 'nav-link' %>">
+                  <i class="nav-icon fas fa-solid  fa-user-secret"></i>
+                  <p>
+                    Seller
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="<%=BASE_URL%>/admin/customers" class="<%= active === 'customer' ? 'nav-link active' : 'nav-link' %>">
+                  <i class="nav-icon fas fa-solid fa-user"></i>
+                  <p>
+                    Customer
+                  </p>
+                </a>
+              </li> -->
+              
+
+              <li class="nav-item">
+                <a href="<%=BASE_URL%>/admin/users" class="<%= adminType == 3 ? 'd-none' : '' %> <%= active === 'user' ? 'nav-link active' : 'nav-link' %>">
+                  <i class="nav-icon fas fa-solid fa-users"></i>
+                  <p>
+                    Users
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="<%=BASE_URL%>/admin/modarater" class="<%= adminType == 3 ? 'd-none' : '' %> <%= active === 'modarater' ? 'nav-link active' : 'nav-link' %>">
+                  <i class="nav-icon fas fa-solid fa-user"></i>
+                  <p>
+                    Moderators
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="<%=BASE_URL%>/admin/core-businesses" class="<%= adminType == 3 ? 'd-none' : '' %> <%= active === 'configuration' ? 'nav-link active' : 'nav-link' %>">
+                  <i class="nav-icon fas fa-solid fa-cog"></i>
+                  <p>
+                    Configuration
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="<%=BASE_URL%>/admin/document" class="<%= active === 'document' ? 'nav-link active' : 'nav-link' %>">
+                  <i class="nav-icon fas fa-solid fa-th"></i>
+                  <p>
+                    Documents  Verification
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item ">
+                <a href="<%=BASE_URL%>/admin/reports" class="<%= active === 'reports' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-bug"></i>
+                  <p>
+                    Reported Ads
+                  </p>
+                </a>
+              </li>
+
+              <!-- <li class="nav-item admin">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-filter"></i>
+                  <p>
+                    Categories
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview ">
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/business-categories" class="<%= active === 'business-categories' ? 'nav-link active' : 'nav-link' %>">`  
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Business Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a href="<%=BASE_URL%>/admin/quotation-categories" class="<%= active === 'quotation-categories' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Quotation Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a href="<%=BASE_URL%>/admin/event-categories" class="<%= active === 'event-categories' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Event Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a href="<%=BASE_URL%>/admin/property-categories" class="<%= active === 'property-categories' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Property Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a href="<%=BASE_URL%>/admin/rental-categories" class="<%= active === 'rental-categories' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Rental Category</p>
+                    </a>
+                  </li>
+                </ul>
+              </li> -->
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/order" class="<%= active === 'order' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-box"></i>
+                  <p>
+                    Orders
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-quotation" class="<%= active === 'quotation' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-comment"></i>
+                  <p>
+                    Quotations
+                  </p>
+                </a>
+              </li>
+
+              
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-invoice" class="<%= active === 'invoice' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-file-invoice"></i>
+                  <p>
+                    Invoices
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-notification" class="<%= active === 'notification' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-bell"></i>
+                  <p>
+                    Notifications
+                  </p>
+                </a>
+              </li>   
+
+              <li class="nav-item"> 
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-list"></i>
+                  <p>
+                    Listings
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview ">
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/businesses" class="<%= active === 'business' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pros Business</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/tasker-ads" class="<%= active === 'tasker-ads' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Tasker</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/carpool-listing" class="<%= active === 'carpool' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Carpool</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/ieat-listing" class="<%= active === 'ieat' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>I Eat</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/job-ad" class="<%= active === 'job-ads' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Job</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/rental-ad" class="<%= active === 'rental-ads' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Rental</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-calendar-alt"></i>
+                  <p>
+                    Payouts
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview ">
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/all-payouts" class="<%= active === 'pending-payout' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pending Order</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/pending-quotations-payout-seller" class="<%= active === 'pending-quotation' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pending Quotation</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/pending-invoice-payout-seller" class="<%= active === 'pending-invoice' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pending Invoice</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/get-initiated-payout" class="<%= active === 'initiated-payout' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Initiated Payouts</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Refunds
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview ">
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/get-pending-order-refund" class="<%= active === 'pending-order-refund' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pending Order</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/get-pending-quotation-refund" class="<%= active === 'pending-quotation-refund' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pending Quotation</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<%=BASE_URL%>/admin/get-initiated-refund" class="<%= active === 'initiated-refunds' ? 'nav-link active' : 'nav-link' %>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Initiated Refunds</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+            <!-- <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-notification" class="<%= active === 'notification' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-calendar-alt"></i>
+                  <p>
+                    Notification
+                  </p>
+                </a>
+              </li>  -->
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-support" class="<%= active === 'support' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas   fa-columns"></i>
+                  <p>
+                    Support Requests
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-disputed-records" class="<%= active === 'disputed-records' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas   fa-chart-pie"></i>
+                  <p>
+                    Disputed Orders
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-disputed-quotation" class="<%= active === 'disputed-quotation' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-truck"></i>
+                  <p>
+                    Disputed Quotation
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-disputed-invoice" class="<%= active === 'disputed-invoice' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas   fa-coffee"></i>
+                  <p>
+                    Disputed Invoices
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-donate-thanks" class="<%= active === 'donateThanks' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-plus-square"></i>
+                  <p>
+                    Donations
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-spotlight" class="<%= active === 'spotlight' ? 'nav-link active' : 'nav-link' %>">
+                  <i class="nav-icon fas fa-plus"></i>
+                  <p>
+                    SpotLight ads
+                  </p>
+                </a>
+              </li>
+
+
+              
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-chats" class="<%= active === 'chat' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-image"></i>
+                  <p>
+                    Chats
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-policy" class="<%= active === 'privacy-policy' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-inbox"></i>
+                  <p>
+                    Privacy & Policy
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-faqs" class="<%= active === 'FAQs' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-filter"></i>
+                  <p>
+                    FAQs
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-about-us" class="<%= active === 'about-us' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-flag"></i>
+                  <p>
+                    About Us
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-terms-condition" class="<%= active === 'terms&condition' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Terms and Conditions
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item admin">
+                <a href="<%=BASE_URL%>/admin/get-feedback" class="<%= active === 'feedback' ? 'nav-link active' : 'nav-link' %> <%= adminType == 3 ? 'd-none' : '' %>">
+                  <i class="nav-icon fas fa-comments"></i>
+                  <p>
+                    Feedbacks
+                  </p>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </aside>

@@ -1,0 +1,17 @@
+# Ignore Node.js modules
+/node_modules
+
+# Ignore environment variables file
+.env
+
+# Ignore error logs
+error.log
+combined.log
+
+# Ignore this directories 
+public/uploads/vendor/background-document/*
+public/uploads/vendor/business/*
+public/uploads/vendor/profile/*
+public/uploads/user/profile/*
+public/uploads/quote/*
+public/uploads/job/*

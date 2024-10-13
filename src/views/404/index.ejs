@@ -1,0 +1,40 @@
+<%- include('../partials/header') -%>
+  <% var BASE_URL=process.env.BASE_URL   %>
+  <style>
+    /* Customize as needed */
+    .error-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa; /* AdminLTE default background color */
+    }
+    .error-code {
+        font-size: 144px;
+        font-weight: bold;
+        color: #dc3545; /* Bootstrap's danger color */
+    }
+    .error-message {
+        font-size: 24px;
+        color: #495057; /* Bootstrap's secondary text color */
+    }
+</style>
+  <div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="error-page">
+                <h2 class="headline text-danger">404</h2>
+                <div class="error-message">
+                    <h3><i class="fas fa-exclamation-triangle text-danger"></i> Oops! Page not found.</h3>
+                    <p>The requested URL <strong><%= url %></strong> was not found on this server.</p>
+                    <a href="/" class="btn btn-primary">Go Back to Home</a>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</div>

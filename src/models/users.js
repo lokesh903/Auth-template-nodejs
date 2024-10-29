@@ -43,9 +43,6 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      get() {
-        return undefined; 
-      }
     },
     role: {
       type: DataTypes.ENUM('admin', 'user'),
@@ -73,8 +70,6 @@ module.exports = (sequelize, DataTypes) => {
       // Hash password before creating the user
       beforeCreate: async (user) => {
         const saltRounds = 10;
-        console.log("user::",user.password);
-        
         user.password = await bcrypt.hash(user.password, saltRounds);
       },
       // Optionally: hash password before updating, if password changes
